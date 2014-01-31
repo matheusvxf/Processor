@@ -1,0 +1,24 @@
+
+State Machine - |SystemIR|ProcessorIR:PROC|CU:ControlUnityBlock|present_state
+Name present_state.movenz present_state.storage present_state.load present_state.subtraction present_state.addition present_state.loadImmediate present_state.move present_state.fetchInstruction present_state.idle 
+present_state.idle 0 0 0 0 0 0 0 0 0 
+present_state.fetchInstruction 0 0 0 0 0 0 0 1 1 
+present_state.move 0 0 0 0 0 0 1 0 1 
+present_state.loadImmediate 0 0 0 0 0 1 0 0 1 
+present_state.addition 0 0 0 0 1 0 0 0 1 
+present_state.subtraction 0 0 0 1 0 0 0 0 1 
+present_state.load 0 0 1 0 0 0 0 0 1 
+present_state.storage 0 1 0 0 0 0 0 0 1 
+present_state.movenz 1 0 0 0 0 0 0 0 1 
+
+State Machine - |SystemIR|ProcessorIR:PROC|CU:ControlUnityBlock|next_state
+Name next_state.movenz next_state.storage next_state.load next_state.subtraction next_state.addition next_state.loadImmediate next_state.move next_state.idle next_state.fetchInstruction 
+next_state.fetchInstruction 0 0 0 0 0 0 0 0 0 
+next_state.idle 0 0 0 0 0 0 0 1 1 
+next_state.move 0 0 0 0 0 0 1 0 1 
+next_state.loadImmediate 0 0 0 0 0 1 0 0 1 
+next_state.addition 0 0 0 0 1 0 0 0 1 
+next_state.subtraction 0 0 0 1 0 0 0 0 1 
+next_state.load 0 0 1 0 0 0 0 0 1 
+next_state.storage 0 1 0 0 0 0 0 0 1 
+next_state.movenz 1 0 0 0 0 0 0 0 1 
